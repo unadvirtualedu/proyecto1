@@ -259,6 +259,12 @@ li a .active, li a:hover
             "footer               footer              footer";
         }
 
+        .grid aside 
+        {
+            display: none;
+            
+        }
+
         .grid
         {
             width: 100%;
