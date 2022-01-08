@@ -191,6 +191,11 @@ li a .active, li a:hover
             "footer               footer              footer";
         }
 
+        .grid .widget  iframe
+        {
+            width: 100%;
+        }
+
         .enlace
         {
             padding-left: 20px;
