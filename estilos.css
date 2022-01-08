@@ -1,0 +1,306 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    font-family: sans-serif;
+    color: black;
+    background: rgb(91, 94, 94);
+}
+
+.grid
+{
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+
+    grid-template-areas: 
+    "header             header              header"
+    "nav                   nav                    nav"
+    "contenido        contenido         sidebar"
+    "widget_1          widget_2           sidebar"
+    "footer               footer              footer";
+}
+
+.grid div,
+
+.grid aside,
+.grid footer
+{
+    background: rgb(114, 182, 13);
+    padding: 20px;
+}
+
+.grid header
+{
+    background: black;
+    color: orangered;
+    font-size: 30px;
+    text-align: center;
+    padding: 20px;
+
+    grid-area: header;
+}
+
+
+.grid .contenido
+{
+    grid-area: contenido;
+}
+
+.contenido img 
+{
+    width: 100%;
+}
+
+.grid aside
+{
+    background: rgb(114, 182, 13);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    grid-area: sidebar;
+}
+
+.grid .widget
+{
+    background: black;
+    width: 100%;
+    color: white;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid .w1
+{
+    grid-area: widget_1;
+}
+
+.grid .w2
+{
+    grid-area: widget_2;
+}
+
+.grid footer
+{
+    background: black;
+    color: orangered;
+    text-align: center;
+    font-size: 12px;
+
+    grid-area: footer;
+}
+
+
+/* MENU RESPONSIVE */
+
+*{
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+nav
+{
+    background: orangered;
+    height: 80px;
+    width: 100%;
+
+    grid-area: nav;
+}
+
+.enlace
+{
+    position: absolute;
+    padding: 20px 50px;
+}
+
+.logo
+{
+    height: 40px;
+}
+
+nav ul
+{
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li
+{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a
+{
+    color: white;
+    font-size: 18px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+li a .active, li a:hover
+{
+    background: rgba(71, 71, 71, 0.555);
+    color: black;
+    transition: 0.4s;
+}
+
+.checkbtn
+{
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check
+{
+    display: none;
+}
+
+
+
+/* RESPONSIVE DESING*/
+
+@media screen and (max-width: 950px)
+{
+        .grid
+        {
+            grid-template-areas: 
+            "header             header              header"
+            "nav                   nav                    nav"
+            "contenido        contenido         contenido"
+            "sidebar            sidebar              sidebar"
+            "widget_1          widget_1          widget_2"
+            "footer               footer              footer";
+        }
+
+        .enlace
+        {
+            padding-left: 20px;
+        }
+
+        nav ul li a
+        {
+            font-size: 16px;
+        }
+
+        .checkbtn
+        {
+            display: block;
+        }
+
+        ul 
+        {
+            position: fixed;
+            width: 100%;
+            height: 40%;
+            background: rgb(91, 94, 94);
+            top: 200px;
+            left: -100%;
+            text-align: center;
+            transition: all 0.5s;
+        }
+
+        nav ul li
+        {
+            display: block;
+            margin: 50px 0;
+            line-height: 30px;
+        }
+
+        nav ul li a
+        {
+            font-size: 20px;
+        }
+
+        li a:hover, li a.active
+        {
+            background: none;
+            color: white;
+        } 
+
+        #check:checked  ~ ul
+        {
+            left: 0;
+        }
+}
+
+
+/* ESTO SE LO PUSE YOO */
+
+@media screen and (max-width: 400px)
+{
+        .grid
+        {
+            grid-template-areas: 
+            "header             header              header"
+            "nav                   nav                    nav"
+            "contenido        contenido         contenido"
+            "sidebar            sidebar              sidebar"
+            "widget_1          widget_1          widget_1"
+            "widget_2          widget_2          widget_2"
+            "footer               footer              footer";
+        }
+
+        .grid
+        {
+            width: 100%;
+        }
+
+        .checkbtn
+        {
+            display: block;
+        }
+
+        ul 
+        {
+            position: fixed;
+            width: 100%;
+            height: 50%;
+            background: rgb(91, 94, 94);
+            top: 200px;
+            left: -100%;
+            text-align: center;
+            transition: all 0.5s;
+        }
+
+        nav ul li
+        {
+            display: block;
+            margin: 50px 0;
+            line-height: 30px;
+        }
+
+        nav ul li a
+        {
+            font-size: 20px;
+        }
+
+        li a:hover, li a.active
+        {
+            background: none;
+            color: white;
+        } 
+
+        #check:checked  ~ ul
+        {
+            left: 0;
+        }
+}
